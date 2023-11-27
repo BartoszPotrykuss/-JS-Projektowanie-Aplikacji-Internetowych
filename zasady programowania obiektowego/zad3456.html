@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //zad.3
+        const teraz = new Date();
+        const data = teraz.toLocaleDateString();
+        const czas = teraz.toLocaleTimeString();
+        document.write("Zad.3 <br>");
+        document.write("Aktualna data: " + data);
+        document.write("<br> Aktualny czas: " + czas);
+
+        //zad.4
+        const losowa = Math.floor(Math.random() * 9000000) + 1000000;
+        const poPrzecinku = (losowa / 1000).toFixed(3);
+        document.write("<br> Zad.4 <br>");
+        document.write("Wygenerowana liczba: " + poPrzecinku + "<br>");
+        document.write("Operacja floor(): " + Math.floor(poPrzecinku) + " - zaokrągla w dół" + "<br>");
+        document.write("Operacja ceil(): " + Math.ceil(poPrzecinku) + " - zaokrągla w górę" + "<br>");
+        document.write("Operacja round(): " + Math.round(poPrzecinku) + " - zaokrągla do najbliższej liczby całkowitej" + "<br>");
+        
+        //zad.5
+        class Uczen
+        {
+            constructor(nazwisko, imie, wiek)
+            {
+                this.nazwisko = nazwisko;
+                this.imie = imie;
+                this.wiek = wiek;
+            }
+        }
+
+        const u1 = new Uczen("Kowalski", "Jan", 16);
+        const u2 = new Uczen("Nowak", "Anna", 17);
+        const u3 = new Uczen("Kowal", "Piotr", 15);
+        document.write("Zad.5 <br>");
+        document.write(u1.imie + " ");
+        document.write(u1.nazwisko + ", ");
+        document.write(u1.wiek + " lat");
+        document.write("<br>");
+        document.write(u2.imie + " ");
+        document.write(u2.nazwisko + ", ");
+        document.write(u2.wiek + " lat");
+        document.write("<br>");
+        document.write(u3.imie + " ");
+        document.write(u3.nazwisko + ", ");
+        document.write(u3.wiek + " lat");
+
+        //zad.6
+        let tab = new Array(10);
+        tab = [153,643,324,325,547,346,876,754,547, 241];
+        document.write("<br> Zad.6 <br>")
+        document.write("Tablica przed sortowaniem: " + tab);
+        document.write("<br> Tablica po sortowaniu: " + tab.sort());
+        document.write("<br> Tablica posortowana malejąco: " + tab.reverse());
+    </script>
+</body>
+</html>

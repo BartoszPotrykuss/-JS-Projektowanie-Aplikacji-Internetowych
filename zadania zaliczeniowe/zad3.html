@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function oblicz(a,b,c,d,e,f)
+        {
+             a = document.getElementById("a").value;
+             b = document.getElementById("b").value;
+             c = document.getElementById("c").value;
+             d = document.getElementById("d").value;
+             e = document.getElementById("e").value;
+             f = document.getElementById("f").value;
+            a = parseInt(a);
+            b = parseInt(b);
+            c = parseInt(c);
+            d = parseInt(d);
+            e = parseInt(e);
+            f = parseInt(f);
+            function srednia()
+            {
+                let srednia;
+                srednia = (a + b + c + d + e + f) /6;
+                return srednia;   
+            }
+            function max()
+            {
+                let max = Math.max(a, b, c, d, e, f);
+                return max;
+            }
+            function min()
+            {
+                let min = Math.min(a, b, c, d, e, f);
+                return min;
+            }
+            function sumaNIE()
+            {
+                let sumaNIE = 0;
+                let tab = [a, b, c, d, e, f];
+                for (i = 0; i < tab.length; i++)
+                {
+                    if (tab[i] % 2 == 1)
+                    {
+                        sumaNIE += tab[i];
+                    }
+                }
+                return sumaNIE;
+            }
+            document.getElementById("wynik").innerHTML = "Średnia z tych liczb jest równa: " + srednia() +
+            "<br> Wartością maksymalną jest: " + max() + "<br> Wartością minimalną jest: " + min() +
+           "<br> Sumą liczb nieparzystch jest: " + sumaNIE();
+        }
+    </script>
+</head>
+<body>
+    Podaj 1. liczbę: <input type="text" id="a"> <br>
+    Podaj 2. liczbę: <input type="text" id="b"> <br>
+    Podaj 3. liczbę: <input type="text" id="c"> <br>
+    Podaj 4. liczbę: <input type="text" id="d"> <br>
+    Podaj 5. liczbę: <input type="text" id="e"> <br>
+    Podaj 6. liczbę: <input type="text" id="f"> <br>
+    <input type="button" value="Oblicz" onclick="oblicz(a,b,c,d,e,f)"> <div id="wynik"></div>
+</body>
+</html>

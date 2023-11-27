@@ -1,0 +1,5 @@
+Tablice:							Obiekty:
+- uporządkowany zbiór elementów 				- nieuprządkowany zbiór właściwości
+- automatycznie generowane indeksy liczbowe 			- właściwości są zdefiniowane przez użytkownika
+- dostęp do elementu za pomocą indeksu				- dostęp do właściwości za pomocą nazwy
+- długość dynamicznie zmieniana w trakcie działania programu 	- nie ma długości

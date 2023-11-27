@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function oblicz(a,b)
+        {
+             a = document.getElementById("a").value;
+             b = document.getElementById("b").value;
+            a = parseInt(a);
+            b = parseInt(b);
+            let wynik = "";
+            if (a > b)
+            {
+                document.getElementById("wynik").innerHTML = "Początek przedziału musi być mniejszy od jego końca";
+            }
+            else
+            {
+            for (i = 0; i < 50; i++)
+            {
+                if (i % 10 == 0) wynik += "<br>"
+                wynik += (Math.floor(Math.random()*(b - a + 1) + a));
+                wynik += ", "
+            }
+            document.getElementById("wynik").innerHTML= "Losowe 50 liczb z tego przedziału: <br>" + wynik;
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    Podaj początek przedziału: <input type="text" id="a"> <br>
+    Podaj koniec przedziału: <input type="text" id="b"> <br>
+    <input type="button" value="Oblicz" onclick="oblicz(a,b)"> <div id="wynik"></div>
+</body>
+</html>

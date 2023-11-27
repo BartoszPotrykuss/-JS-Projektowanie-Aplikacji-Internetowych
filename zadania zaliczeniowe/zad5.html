@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function oblicz(a)
+        {
+            a = document.getElementById("a").value;
+            a = parseInt(a);
+            let calk = "";
+                if (a < 2)
+                {
+                    calk = "Liczba nie jest całkowita";
+                }
+                else
+                {
+                    for (let i = 2; i < a; i++)
+                    {
+                        if (a % i == 0)
+                        calk = "Liczba nie jest całkowita";
+                    }
+                    if (calk == "")
+                    calk = "Liczba jest całkowita";
+                }
+                document.getElementById("wynik").innerHTML = calk;
+            }
+    </script>
+</head>
+<body>
+    Podaj liczbę: <input type="text" id="a"> <br>
+    <input type="button" value="Oblicz" onclick="oblicz(a)"> <div id="wynik"></div>
+</body>
+</html>

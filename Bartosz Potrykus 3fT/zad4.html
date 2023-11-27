@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="formularz">
+        Liczba 1
+        <input type="text" id="pole1" class="liczba" />
+        <input type="checkbox" class="checkbox" /><br />
+
+        Liczba 2
+        <input type="text" id="pole2" class="liczba" />
+        <input type="checkbox" class="checkbox" /><br />
+
+        Liczba 3
+        <input type="text" id="pole3" class="liczba" />
+        <input type="checkbox" class="checkbox" /><br />
+
+        Liczba 4
+        <input type="text" id="pole4" class="liczba" />
+        <input type="checkbox" class="checkbox" /><br />
+
+        Liczba 5
+        <input type="text" id="pole5" class="liczba" />
+        <input type="checkbox" class="checkbox" /><br />
+    </form>
+   
+    <p>Suma zaznaczonych liczb: <div id="wynik"></div></p>
+
+    <script>
+        const form = document.getElementById("formularz");
+        const checkboxes = document.querySelectorAll(".checkbox");
+        const liczby = document.querySelectorAll(".liczba");
+        const wynik = document.getElementById("wynik");
+
+        form.addEventListener("input", function () {
+            let suma = 0;
+            for (let i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    const liczba = parseInt(liczby[i].value);
+                    if (!isNaN(liczba)) {
+                        suma += liczba;
+                    }
+                }
+            }
+            wynik.textContent = suma;
+        });
+    </script>
+</body>
+</html>

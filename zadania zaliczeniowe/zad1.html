@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function szyfruj()
+        {
+            let a = document.getElementById("a").value;
+            let napis = [];
+            for (let i = 0; i < a.length; i++)
+            {
+                let kod = a.charCodeAt(i) + 2;
+                while (kod > 122)
+                {
+                    kod = (kod - 122) + 96;
+                }
+                 napis.push(String.fromCharCode(kod))
+            }
+            let napisBezPrzecinkow = "";
+            for (let i = 0; i < napis.length; i++)
+            {
+                napisBezPrzecinkow += napis[i];
+            }
+            document.getElementById("wynik").innerHTML = "Zaszyfrowany tekst: " + napisBezPrzecinkow;
+        }
+        function odszyfruj()
+        {
+            let a = document.getElementById("a").value;
+            let napis = [];
+            for (let i = 0; i < a.length; i++)
+            {
+                let kod = a.charCodeAt(i) - 2;
+                while (kod > 122)
+                {
+                    kod = (kod - 122) + 96;
+                }
+                 napis.push(String.fromCharCode(kod))
+            }
+            let napisBezPrzecinkow = "";
+            for (let i = 0; i < napis.length; i++)
+            {
+                napisBezPrzecinkow += napis[i];
+            }
+            document.getElementById("wynik2").innerHTML = "Odszyfrowany tekst " + napisBezPrzecinkow;       
+        }
+    </script>
+</head>
+<body>
+    Podaj ciąg znaków: <input type="text" id="a"> <br>
+    <input type="button" value="Szyfruj" onclick="szyfruj()"> <div id="wynik"></div>
+    <input type="button" value="Odszyfruj" onclick="odszyfruj()"> <div id="wynik2"></div>
+</body>
+</html>

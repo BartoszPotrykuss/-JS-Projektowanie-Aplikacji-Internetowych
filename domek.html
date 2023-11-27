@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+const li1 = document.querySelectorAll("li.list-el");
+    const li2 = document.getElementsByTagName("li");
+    const li3 = document.getElementsByClassName("list-el");
+
+    console.log("querySelectorAll: ", li1.length);
+    console.log("getElementsByTagName: ", li2.length);
+    console.log("getElementsByClassName: ", li3.length);
+    </script>
+<ul class="list">
+    <li class="list-el">
+        Element LI numer 1
+        <button class="button button-del">Usuń</button>
+    </li>
+    <li class="list-el">
+        Element LI numer 2
+        <button class="button button-del">Usuń</button>
+    </li>
+    <li class="list-el">
+        Element LI numer 3
+        <button class="button button-del">Usuń</button>
+    </li>
+    <li class="list-el">
+        Element LI numer 4
+        <button class="button button-del">Usuń</button>
+    </li>
+</ul>
+</body>
+</html>

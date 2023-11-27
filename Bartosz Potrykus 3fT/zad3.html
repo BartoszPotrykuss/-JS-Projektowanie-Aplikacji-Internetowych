@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Kalkulator</h3>
+     <input type="text"  id="a">
+     <input type="text"  id="b"> 
+     
+     <input type="button" value="Dodawanie" onclick="Dodaj()">
+     <input type="button" value="Odejmowanie" onclick="Odejmij()">
+     <input type="button" value="Mnożenie" onclick="Wymnoz()">
+     <input type="button" value="Dzielenie" onclick="Podziel()">
+     <input type="button" value="Reszta z dzielenia" onclick="Reszta()">
+     <input type="button" value="Dzielenie całkowite" onclick="Calkowite()"> <br>
+     Wynik: <div id="wynik"></div> 
+     
+     <script>
+
+        let a,b, wynik;
+        function Dodaj()
+        {
+            a = document.querySelector("#a").value;
+            b = document.querySelector("#b").value;
+            
+
+            if (a == "" || b == "")
+            {
+                document.querySelector("#wynik").innerHTML="Uzupełnij pola poprawnie";
+            }
+            else
+            {
+                a = parseFloat(a);
+                b = parseFloat(b);
+            wynik = a + b;
+            document.querySelector("#wynik").innerHTML=wynik;
+            }
+        }
+        function Odejmij()
+        {
+            a = document.querySelector("#a").value;
+            b = document.querySelector("#b").value;
+            
+            if (a == "" || b == "")
+            {
+                document.querySelector("#wynik").innerHTML="Uzupełnij pola poprawnie";
+            }
+            else
+            {
+                a = parseFloat(a);
+                b = parseFloat(b);
+            wynik = a - b;
+            document.querySelector("#wynik").innerHTML=wynik;
+            }
+        }
+        function Wymnoz()
+        {
+            a = document.querySelector("#a").value;
+            b = document.querySelector("#b").value;
+            
+            if (a == "" || b == "")
+            {
+                document.querySelector("#wynik").innerHTML="Uzupełnij pola poprawnie";
+            }
+            else
+            {
+                a = parseFloat(a);
+                b = parseFloat(b);
+            wynik = a * b;
+            document.querySelector("#wynik").innerHTML=wynik;
+            }
+        }
+        function Podziel()
+        {
+            a = document.querySelector("#a").value;
+            b = document.querySelector("#b").value;
+            
+            if (a == "" || b == "")
+            {
+                document.querySelector("#wynik").innerHTML="Uzupełnij pola poprawnie";
+            }
+            else if (b == 0)
+            {
+                document.querySelector("#wynik").innerHTML="Nie dziel przez zero";
+            }
+            else
+            {
+                a = parseFloat(a);
+            b = parseFloat(b);
+            wynik = a / b;
+            document.querySelector("#wynik").innerHTML=wynik;
+            }
+        }
+        function Reszta()
+        {
+            a = document.querySelector("#a").value;
+            b = document.querySelector("#b").value;
+            
+            if (a == "" || b == "")
+            {
+                document.querySelector("#wynik").innerHTML="Uzupełnij pola poprawnie";
+            }
+            else if (b == 0)
+            {
+                document.querySelector("#wynik").innerHTML="Nie dziel przez zero";
+            }
+            else
+            {
+                a = parseFloat(a);
+            b = parseFloat(b);
+            wynik = a % b;
+            document.querySelector("#wynik").innerHTML=wynik;
+            }
+        }
+        function Calkowite()
+        {
+            a = document.querySelector("#a").value;
+            b = document.querySelector("#b").value;
+            
+            if (a == "" || b == "")
+            {
+                document.querySelector("#wynik").innerHTML="Uzupełnij pola poprawnie";
+            }
+            else if (b == 0)
+            {
+                document.querySelector("#wynik").innerHTML="Nie dziel przez zero";
+            }
+            else
+            {
+                a = parseFloat(a);
+            b = parseFloat(b);
+            wynik = a / b;
+            wynik = Math.floor(wynik);
+            document.querySelector("#wynik").innerHTML=wynik;
+            }
+        }
+</script>
+</body>
+</html>

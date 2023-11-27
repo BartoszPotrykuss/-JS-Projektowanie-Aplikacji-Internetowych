@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="formularz">
+        <label for="ogloszenia">Liczba ogłoszeń</label>
+        <input type="text" id="ogloszenia">
+        <label for="staly">Stały klient</label>
+        <input type="checkbox" id="staly">
+        <input type="button" value="Zatwierdź" onclick="Oblicz()"> <br>
+        Koszt:  <div id="koszt"></div>
+    </form>
+    <script>
+        function Oblicz()
+        {
+            let liczbaOgloszen = document.querySelector("#ogloszenia").value;
+            let koszt;
+            let stalyKlient = document.querySelector("#staly").checked;
+            if (liczbaOgloszen <= 50 && liczbaOgloszen >= 1)
+            {
+                koszt = liczbaOgloszen*2;
+            }
+            else if (liczbaOgloszen >= 51 && liczbaOgloszen <=100)
+            {
+                koszt = (50*2) + ((liczbaOgloszen-50)*1.5);
+            }
+            else if (liczbaOgloszen >= 101)
+            {
+                koszt = (50*2) + (50*1.5) + ((liczbaOgloszen-100)*1);
+            }
+            if (stalyKlient)
+            {
+                koszt -= koszt*0.2;
+            }
+            document.querySelector("#koszt").innerHTML= koszt;
+        }
+    </script>
+</body>
+</html>

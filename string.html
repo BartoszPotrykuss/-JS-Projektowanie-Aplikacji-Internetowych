@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let text = "Javascript (w skrócie JS) - język został opracowany przez firmę Netscape w połowie lat 90. Jego twórcą jest Brendan Eich."
+        function wypisz()
+        {
+        document.getElementById("informacja").innerHTML = text;
+        document.getElementById("dane").innerHTML = "Długość tego tekstu:" + text.length;
+        document.getElementById("informacja2").innerHTML = "<br> Tekst z dwoma znakami od 22 znaku: " + text.slice(22,24);
+        document.getElementById("informacja3").innerHTML = "<br> Tekst od 42 znaku:" + text.slice(41);
+        document.getElementById("informacja4").innerHTML = "<br> Zamienie Netscape: " + text.replace("Netscape", "Netscape Communications Corporation");
+        document.getElementById("informacja5").innerHTML = "<br> Tekst napisany dużymi literami: " + text.toUpperCase();
+        }
+    </script>
+</head>
+<body onload="wypisz()">
+    <div id="informacja"></div>
+    <div id="dane"></div>
+    <div id = "informacja2"></div>
+    <div id = "informacja3"></div>
+    <div id = "informacja4"></div>
+    <div id = "informacja5"></div>
+</body>
+</html>

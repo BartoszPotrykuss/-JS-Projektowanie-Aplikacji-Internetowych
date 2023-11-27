@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class samochod {
+    constructor(marka, typ, rok) {
+        this.marka = marka;
+        this.typ = typ;
+        this.rok = rok;
+    }
+    wypisz() {
+        return `Marka: ${this.marka} <br> Typ: ${this.typ} <br> Rok: ${this.rok}`;
+    }
+}
+
+function wezDane()
+{
+let marka, typ, rok;
+marka = document.querySelector("#marka1").value;
+typ = document.querySelector("#typ1").value;
+rok = document.querySelector("#rok1").value;
+const car1 = new samochod(marka, typ, rok);
+
+marka = document.querySelector("#marka2").value;
+typ = document.querySelector("#typ2").value;
+rok = document.querySelector("#rok2").value;
+const car2 = new samochod(marka, typ, rok);
+
+marka = document.querySelector("#marka3").value;
+typ = document.querySelector("#typ3").value;
+rok = document.querySelector("#rok3").value;
+const car3 = new samochod(marka, typ, rok);
+document.querySelector("#wynik").innerHTML=`Dane pierwszego samochodu: <br><br> ${car1.wypisz()} <br><br><br> Dane drugiego: <br><br> ${car2.wypisz()} <br><br><br> Dane trzeciego samochodu: <br><br> ${car3.wypisz()}`; 
+}
+    </script>
+</head>
+<body>
+    <form>
+    Samochod nr 1 <br>
+    Podaj markę: <input type="text" id="marka1"> <br>
+    Podaj typ: <input type="text" id="typ1"> <br>
+    Podaj rok produckji: <input type="number" id="rok1"> <br>
+        <br>
+    Samochod nr 2 <br>
+    Podaj markę: <input type="text" id="marka2"> <br>
+    Podaj typ: <input type="text" id="typ2"> <br>
+    Podaj rok produkcji: <input type="number" id="rok2"> <br>
+        <br>
+    Samochod nr 3 <br>
+    Podaj markę: <input type="text" id="marka3"> <br>
+    Podaj typ: <input type="text" id="typ3"> <br>
+    Podaj rok produkcji: <input type="number" id="rok3"> <br>
+    <input type="button" value="Zatwierdź" onclick="wezDane()"> <br>
+    </form>
+    <div id="wynik"></div>
+</body>
+</html>
